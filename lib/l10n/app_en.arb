@@ -1,0 +1,32 @@
+{
+  "@@locale": "en",
+  "appTitle": "BabyTouch",
+  "selectAlbum": "Select Album",
+  "permissionRequired": "Album permission required",
+  "grantPermission": "Grant Permission",
+  "noAlbumsFound": "No albums found",
+  "noMediaFound": "No media found",
+  "allVideos": "All Videos",
+  "videosCount": "{count} Videos",
+  "@videosCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "itemsCount": "{count} Items",
+  "@itemsCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "menu": "Menu",
+  "changeAlbum": "Change Album",
+  "exitApp": "Exit App",
+  "cancel": "Cancel",
+  "language": "Language",
+  "systemDefault": "System Default"
+}

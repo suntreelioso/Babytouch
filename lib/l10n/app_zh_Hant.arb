@@ -1,0 +1,18 @@
+{
+  "@@locale": "zh_Hant",
+  "appTitle": "幼教觸控",
+  "selectAlbum": "選擇相簿",
+  "permissionRequired": "需要相簿存取權限",
+  "grantPermission": "授予權限",
+  "noAlbumsFound": "未找到相簿",
+  "noMediaFound": "未找到媒體檔案",
+  "allVideos": "所有影片",
+  "videosCount": "{count} 個影片",
+  "itemsCount": "{count} 個項目",
+  "menu": "菜單",
+  "changeAlbum": "更改相簿",
+  "exitApp": "退出應用",
+  "cancel": "取消",
+  "language": "語言",
+  "systemDefault": "系統預設"
+}

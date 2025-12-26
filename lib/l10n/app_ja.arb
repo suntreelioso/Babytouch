@@ -1,0 +1,18 @@
+{
+  "@@locale": "ja",
+  "appTitle": "ベビータッチ",
+  "selectAlbum": "アルバムを選択",
+  "permissionRequired": "アルバムへのアクセス権限が必要です",
+  "grantPermission": "権限を許可",
+  "noAlbumsFound": "アルバムが見つかりません",
+  "noMediaFound": "メディアが見つかりません",
+  "allVideos": "すべてのビデオ",
+  "videosCount": "{count} 個のビデオ",
+  "itemsCount": "{count} 個の項目",
+  "menu": "メニュー",
+  "changeAlbum": "アルバムを変更",
+  "exitApp": "アプリを終了",
+  "cancel": "キャンセル",
+  "language": "言語",
+  "systemDefault": "システムデフォルト"
+}

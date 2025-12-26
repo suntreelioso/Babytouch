@@ -1,0 +1,18 @@
+{
+  "@@locale": "zh",
+  "appTitle": "幼教触控",
+  "selectAlbum": "选择相册",
+  "permissionRequired": "需要相册访问权限",
+  "grantPermission": "授予权限",
+  "noAlbumsFound": "未找到相册",
+  "noMediaFound": "未找到媒体文件",
+  "allVideos": "所有视频",
+  "videosCount": "{count} 个视频",
+  "itemsCount": "{count} 个项目",
+  "menu": "菜单",
+  "changeAlbum": "更改相册",
+  "exitApp": "退出应用",
+  "cancel": "取消",
+  "language": "语言",
+  "systemDefault": "系统默认"
+}
