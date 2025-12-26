@@ -1,0 +1,65 @@
+name: Build & Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  release:
+    name: Build and Release APK
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'zulu'
+          java-version: '17'
+
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: 'stable'
+          cache: true
+
+      - name: Install Dependencies
+        run: flutter pub get
+
+      - name: Extract version from tag
+        id: get_version
+        run: |
+          # Extract tag version (expecting v1.0.0+1 or v1.0.0)
+          TAG_NAME=${GITHUB_REF#refs/tags/v}
+          if [[ "$TAG_NAME" == *"+"* ]]; then
+            VERSION=${TAG_NAME%+*}
+            BUILD=${TAG_NAME#*+}
+          else
+            VERSION=$TAG_NAME
+            BUILD="1"
+          fi
+          echo "VERSION=$VERSION" >> $GITHUB_OUTPUT
+          echo "BUILD=$BUILD" >> $GITHUB_OUTPUT
+
+      - name: Build APK
+        run: |
+          flutter build apk --release \
+            --target-platform android-arm64 \
+            --build-name=${{ steps.get_version.outputs.VERSION }} \
+            --build-number=${{ steps.get_version.outputs.BUILD }}
+
+      - name: Rename APK
+        run: mv build/app/outputs/flutter-apk/app-release.apk build/app/outputs/flutter-apk/Babytouch.apk
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: build/app/outputs/flutter-apk/Babytouch.apk
+          generate_release_notes: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
